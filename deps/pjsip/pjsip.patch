@@ -1,6 +1,6 @@
-diff -ruN pjproject-2.5.5/pjlib/build/pjlib.vcxproj pjproject-2.5.5-mod/pjlib/build/pjlib.vcxproj
---- pjproject-2.5.5/pjlib/build/pjlib.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjlib/build/pjlib.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjlib/build/pjlib.vcxproj pjproject2/pjlib/build/pjlib.vcxproj
+--- pjproject/pjlib/build/pjlib.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjlib/build/pjlib.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -177,9 +177,9 @@ diff -ruN pjproject-2.5.5/pjlib/build/pjlib.vcxproj pjproject-2.5.5-mod/pjlib/bu
      <ClInclude Include="..\include\pj\errno.h" />
      <ClInclude Include="..\include\pj\except.h" />
      <ClInclude Include="..\include\pj\fifobuf.h" />
-diff -ruN pjproject-2.5.5/pjlib/build/pjlib_test.vcxproj pjproject-2.5.5-mod/pjlib/build/pjlib_test.vcxproj
---- pjproject-2.5.5/pjlib/build/pjlib_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjlib/build/pjlib_test.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjlib/build/pjlib_test.vcxproj pjproject2/pjlib/build/pjlib_test.vcxproj
+--- pjproject/pjlib/build/pjlib_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjlib/build/pjlib_test.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -341,9 +341,9 @@ diff -ruN pjproject-2.5.5/pjlib/build/pjlib_test.vcxproj pjproject-2.5.5-mod/pjl
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjlib/include/pj/config_site.h pjproject-2.5.5-mod/pjlib/include/pj/config_site.h
---- pjproject-2.5.5/pjlib/include/pj/config_site.h	1970-01-01 08:00:00.000000000 +0800
-+++ pjproject-2.5.5-mod/pjlib/include/pj/config_site.h	2018-11-05 14:31:52.000000000 +0800
+diff -ruN pjproject/pjlib/include/pj/config_site.h pjproject2/pjlib/include/pj/config_site.h
+--- pjproject/pjlib/include/pj/config_site.h	1970-01-01 08:00:00.000000000 +0800
++++ pjproject2/pjlib/include/pj/config_site.h	2018-12-28 16:23:09.000000000 +0800
 @@ -0,0 +1,124 @@
 +/*
 + * This file contains several sample settings especially for Windows
@@ -469,9 +469,9 @@ diff -ruN pjproject-2.5.5/pjlib/include/pj/config_site.h pjproject-2.5.5-mod/pjl
 +#if defined(__APPLE__)
 +    #define PJ_HAS_FLOATING_POINT   1
 +#endif
-diff -ruN pjproject-2.5.5/pjlib-util/build/pjlib_util.vcxproj pjproject-2.5.5-mod/pjlib-util/build/pjlib_util.vcxproj
---- pjproject-2.5.5/pjlib-util/build/pjlib_util.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjlib-util/build/pjlib_util.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjlib-util/build/pjlib_util.vcxproj pjproject2/pjlib-util/build/pjlib_util.vcxproj
+--- pjproject/pjlib-util/build/pjlib_util.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjlib-util/build/pjlib_util.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -639,9 +639,9 @@ diff -ruN pjproject-2.5.5/pjlib-util/build/pjlib_util.vcxproj pjproject-2.5.5-mo
    </PropertyGroup>
    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
      <ClCompile>
-diff -ruN pjproject-2.5.5/pjlib-util/build/pjlib_util_test.vcxproj pjproject-2.5.5-mod/pjlib-util/build/pjlib_util_test.vcxproj
---- pjproject-2.5.5/pjlib-util/build/pjlib_util_test.vcxproj	2015-09-11 10:12:49.000000000 +0800
-+++ pjproject-2.5.5-mod/pjlib-util/build/pjlib_util_test.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjlib-util/build/pjlib_util_test.vcxproj pjproject2/pjlib-util/build/pjlib_util_test.vcxproj
+--- pjproject/pjlib-util/build/pjlib_util_test.vcxproj	2015-09-11 10:12:49.000000000 +0800
++++ pjproject2/pjlib-util/build/pjlib_util_test.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -728,9 +728,9 @@ diff -ruN pjproject-2.5.5/pjlib-util/build/pjlib_util_test.vcxproj pjproject-2.5
      <UseOfMfc>false</UseOfMfc>
      <CharacterSet>MultiByte</CharacterSet>
    </PropertyGroup>
-diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia.vcxproj pjproject-2.5.5-mod/pjmedia/build/pjmedia.vcxproj
---- pjproject-2.5.5/pjmedia/build/pjmedia.vcxproj	2016-06-28 16:00:58.000000000 +0800
-+++ pjproject-2.5.5-mod/pjmedia/build/pjmedia.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjmedia/build/pjmedia.vcxproj pjproject2/pjmedia/build/pjmedia.vcxproj
+--- pjproject/pjmedia/build/pjmedia.vcxproj	2016-06-28 16:00:58.000000000 +0800
++++ pjproject2/pjmedia/build/pjmedia.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -817,173 +817,9 @@ diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia.vcxproj pjproject-2.5.5-mod/pjme
      <UseOfMfc>false</UseOfMfc>
      <CharacterSet>MultiByte</CharacterSet>
    </PropertyGroup>
-diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_audiodev.vcxproj pjproject-2.5.5-mod/pjmedia/build/pjmedia_audiodev.vcxproj
---- pjproject-2.5.5/pjmedia/build/pjmedia_audiodev.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjmedia/build/pjmedia_audiodev.vcxproj	2018-11-05 14:11:17.000000000 +0800
-@@ -57,73 +57,73 @@
-   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-     <ConfigurationType>StaticLibrary</ConfigurationType>
--    <PlatformToolset>v140</PlatformToolset>
-+    <PlatformToolset>v141</PlatformToolset>
-     <UseOfMfc>false</UseOfMfc>
-     <CharacterSet>MultiByte</CharacterSet>
-   </PropertyGroup>
-@@ -133,62 +133,62 @@
- <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win32-release-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win32-common-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win32-release-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win32-common-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win32-release-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win32-common-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win64-release-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win64-common-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win64-release-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win64-common-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win64-release-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
-   </ImportGroup>
-   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
- 	<Import Project="..\..\build\vs\pjproject-vs14-win64-common-defaults.props" />
--    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
-+    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
-   </ImportGroup>
-   <PropertyGroup Label="UserMacros" />
-   <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_codec.vcxproj pjproject-2.5.5-mod/pjmedia/build/pjmedia_codec.vcxproj
---- pjproject-2.5.5/pjmedia/build/pjmedia_codec.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjmedia/build/pjmedia_codec.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjmedia/build/pjmedia_audiodev.vcxproj pjproject2/pjmedia/build/pjmedia_audiodev.vcxproj
+--- pjproject/pjmedia/build/pjmedia_audiodev.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjmedia/build/pjmedia_audiodev.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -1145,9 +981,173 @@ diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_codec.vcxproj pjproject-2.5.5-mo
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_test.vcxproj pjproject-2.5.5-mod/pjmedia/build/pjmedia_test.vcxproj
---- pjproject-2.5.5/pjmedia/build/pjmedia_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjmedia/build/pjmedia_test.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjmedia/build/pjmedia_codec.vcxproj pjproject2/pjmedia/build/pjmedia_codec.vcxproj
+--- pjproject/pjmedia/build/pjmedia_codec.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjmedia/build/pjmedia_codec.vcxproj	2018-12-28 16:23:09.000000000 +0800
+@@ -57,73 +57,73 @@
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+-    <PlatformToolset>v140</PlatformToolset>
++    <PlatformToolset>v141</PlatformToolset>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+   </PropertyGroup>
+@@ -133,62 +133,62 @@
+ <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win32-release-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win32-common-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win32-release-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win32-common-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win32-release-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win32-common-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win64-release-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-release-static-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win64-common-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-debug-dynamic-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win64-release-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win64-common-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win64-release-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-release-dynamic-defaults.props" />
+   </ImportGroup>
+   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+ 	<Import Project="..\..\build\vs\pjproject-vs14-win64-common-defaults.props" />
+-    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />    
++    <Import Project="..\..\build\vs\pjproject-vs14-debug-static-defaults.props" />
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup>
+diff -ruN pjproject/pjmedia/build/pjmedia_test.vcxproj pjproject2/pjmedia/build/pjmedia_test.vcxproj
+--- pjproject/pjmedia/build/pjmedia_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjmedia/build/pjmedia_test.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -1309,9 +1309,9 @@ diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_test.vcxproj pjproject-2.5.5-mod
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_videodev.vcxproj pjproject-2.5.5-mod/pjmedia/build/pjmedia_videodev.vcxproj
---- pjproject-2.5.5/pjmedia/build/pjmedia_videodev.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjmedia/build/pjmedia_videodev.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjmedia/build/pjmedia_videodev.vcxproj pjproject2/pjmedia/build/pjmedia_videodev.vcxproj
+--- pjproject/pjmedia/build/pjmedia_videodev.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjmedia/build/pjmedia_videodev.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -1473,9 +1473,9 @@ diff -ruN pjproject-2.5.5/pjmedia/build/pjmedia_videodev.vcxproj pjproject-2.5.5
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjnath/build/pjnath.vcxproj pjproject-2.5.5-mod/pjnath/build/pjnath.vcxproj
---- pjproject-2.5.5/pjnath/build/pjnath.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjnath/build/pjnath.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjnath/build/pjnath.vcxproj pjproject2/pjnath/build/pjnath.vcxproj
+--- pjproject/pjnath/build/pjnath.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjnath/build/pjnath.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -1646,9 +1646,9 @@ diff -ruN pjproject-2.5.5/pjnath/build/pjnath.vcxproj pjproject-2.5.5-mod/pjnath
      <ClInclude Include="..\include\pjnath\stun_msg.h" />
      <ClInclude Include="..\include\pjnath\stun_session.h" />
      <ClInclude Include="..\include\pjnath\stun_transaction.h" />
-diff -ruN pjproject-2.5.5/pjnath/build/pjnath_test.vcxproj pjproject-2.5.5-mod/pjnath/build/pjnath_test.vcxproj
---- pjproject-2.5.5/pjnath/build/pjnath_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjnath/build/pjnath_test.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjnath/build/pjnath_test.vcxproj pjproject2/pjnath/build/pjnath_test.vcxproj
+--- pjproject/pjnath/build/pjnath_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjnath/build/pjnath_test.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -1810,9 +1810,21 @@ diff -ruN pjproject-2.5.5/pjnath/build/pjnath_test.vcxproj pjproject-2.5.5-mod/p
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip/build/pjsip_core.vcxproj pjproject-2.5.5-mod/pjsip/build/pjsip_core.vcxproj
---- pjproject-2.5.5/pjsip/build/pjsip_core.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip/build/pjsip_core.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjnath/src/pjnath/ice_strans.c pjproject2/pjnath/src/pjnath/ice_strans.c
+--- pjproject/pjnath/src/pjnath/ice_strans.c	2016-06-29 13:53:10.000000000 +0800
++++ pjproject2/pjnath/src/pjnath/ice_strans.c	2018-12-28 16:39:01.000000000 +0800
+@@ -1608,7 +1608,7 @@
+ 	status = PJ_EINVALIDOP;
+     }
+ 
+-    return (status==PJ_SUCCESS||status==PJ_EPENDING) ? PJ_SUCCESS : status;
++    return status;
+ }
+ 
+ /*
+diff -ruN pjproject/pjsip/build/pjsip_core.vcxproj pjproject2/pjsip/build/pjsip_core.vcxproj
+--- pjproject/pjsip/build/pjsip_core.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip/build/pjsip_core.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -1983,9 +1995,9 @@ diff -ruN pjproject-2.5.5/pjsip/build/pjsip_core.vcxproj pjproject-2.5.5-mod/pjs
    </ItemGroup>
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
    <ImportGroup Label="ExtensionTargets">
-diff -ruN pjproject-2.5.5/pjsip/build/pjsip_simple.vcxproj pjproject-2.5.5-mod/pjsip/build/pjsip_simple.vcxproj
---- pjproject-2.5.5/pjsip/build/pjsip_simple.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip/build/pjsip_simple.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip/build/pjsip_simple.vcxproj pjproject2/pjsip/build/pjsip_simple.vcxproj
+--- pjproject/pjsip/build/pjsip_simple.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip/build/pjsip_simple.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -2147,9 +2159,9 @@ diff -ruN pjproject-2.5.5/pjsip/build/pjsip_simple.vcxproj pjproject-2.5.5-mod/p
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip/build/pjsip_test.vcxproj pjproject-2.5.5-mod/pjsip/build/pjsip_test.vcxproj
---- pjproject-2.5.5/pjsip/build/pjsip_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip/build/pjsip_test.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip/build/pjsip_test.vcxproj pjproject2/pjsip/build/pjsip_test.vcxproj
+--- pjproject/pjsip/build/pjsip_test.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip/build/pjsip_test.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -2316,9 +2328,9 @@ diff -ruN pjproject-2.5.5/pjsip/build/pjsip_test.vcxproj pjproject-2.5.5-mod/pjs
  	<TargetName>pjsip-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration)</TargetName>
    </PropertyGroup>
    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-diff -ruN pjproject-2.5.5/pjsip/build/pjsip_ua.vcxproj pjproject-2.5.5-mod/pjsip/build/pjsip_ua.vcxproj
---- pjproject-2.5.5/pjsip/build/pjsip_ua.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip/build/pjsip_ua.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip/build/pjsip_ua.vcxproj pjproject2/pjsip/build/pjsip_ua.vcxproj
+--- pjproject/pjsip/build/pjsip_ua.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip/build/pjsip_ua.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -2482,9 +2494,9 @@ diff -ruN pjproject-2.5.5/pjsip/build/pjsip_ua.vcxproj pjproject-2.5.5-mod/pjsip
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
      <_ProjectFileVersion>14.0.22823.1</_ProjectFileVersion>
-diff -ruN pjproject-2.5.5/pjsip/build/pjsua2_lib.vcxproj pjproject-2.5.5-mod/pjsip/build/pjsua2_lib.vcxproj
---- pjproject-2.5.5/pjsip/build/pjsua2_lib.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip/build/pjsua2_lib.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip/build/pjsua2_lib.vcxproj pjproject2/pjsip/build/pjsua2_lib.vcxproj
+--- pjproject/pjsip/build/pjsua2_lib.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip/build/pjsua2_lib.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -2646,9 +2658,9 @@ diff -ruN pjproject-2.5.5/pjsip/build/pjsua2_lib.vcxproj pjproject-2.5.5-mod/pjs
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip/build/pjsua_lib.vcxproj pjproject-2.5.5-mod/pjsip/build/pjsua_lib.vcxproj
---- pjproject-2.5.5/pjsip/build/pjsua_lib.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip/build/pjsua_lib.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip/build/pjsua_lib.vcxproj pjproject2/pjsip/build/pjsua_lib.vcxproj
+--- pjproject/pjsip/build/pjsua_lib.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip/build/pjsua_lib.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -2810,9 +2822,9 @@ diff -ruN pjproject-2.5.5/pjsip/build/pjsua_lib.vcxproj pjproject-2.5.5-mod/pjsi
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip-apps/build/libpjproject.vcxproj pjproject-2.5.5-mod/pjsip-apps/build/libpjproject.vcxproj
---- pjproject-2.5.5/pjsip-apps/build/libpjproject.vcxproj	2016-06-28 14:04:19.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip-apps/build/libpjproject.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip-apps/build/libpjproject.vcxproj pjproject2/pjsip-apps/build/libpjproject.vcxproj
+--- pjproject/pjsip-apps/build/libpjproject.vcxproj	2016-06-28 14:04:19.000000000 +0800
++++ pjproject2/pjsip-apps/build/libpjproject.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -2899,9 +2911,9 @@ diff -ruN pjproject-2.5.5/pjsip-apps/build/libpjproject.vcxproj pjproject-2.5.5-
      <UseOfMfc>false</UseOfMfc>
      <CharacterSet>MultiByte</CharacterSet>
    </PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip-apps/build/pjsua.vcxproj pjproject-2.5.5-mod/pjsip-apps/build/pjsua.vcxproj
---- pjproject-2.5.5/pjsip-apps/build/pjsua.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip-apps/build/pjsua.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip-apps/build/pjsua.vcxproj pjproject2/pjsip-apps/build/pjsua.vcxproj
+--- pjproject/pjsip-apps/build/pjsua.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip-apps/build/pjsua.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -3063,9 +3075,9 @@ diff -ruN pjproject-2.5.5/pjsip-apps/build/pjsua.vcxproj pjproject-2.5.5-mod/pjs
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip-apps/build/pjsystest.vcxproj pjproject-2.5.5-mod/pjsip-apps/build/pjsystest.vcxproj
---- pjproject-2.5.5/pjsip-apps/build/pjsystest.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip-apps/build/pjsystest.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip-apps/build/pjsystest.vcxproj pjproject2/pjsip-apps/build/pjsystest.vcxproj
+--- pjproject/pjsip-apps/build/pjsystest.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip-apps/build/pjsystest.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -26,19 +26,19 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -3117,9 +3129,9 @@ diff -ruN pjproject-2.5.5/pjsip-apps/build/pjsystest.vcxproj pjproject-2.5.5-mod
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip-apps/build/python_pjsua.vcxproj pjproject-2.5.5-mod/pjsip-apps/build/python_pjsua.vcxproj
---- pjproject-2.5.5/pjsip-apps/build/python_pjsua.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip-apps/build/python_pjsua.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip-apps/build/python_pjsua.vcxproj pjproject2/pjsip-apps/build/python_pjsua.vcxproj
+--- pjproject/pjsip-apps/build/python_pjsua.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip-apps/build/python_pjsua.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -16,13 +16,13 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -3136,9 +3148,9 @@ diff -ruN pjproject-2.5.5/pjsip-apps/build/python_pjsua.vcxproj pjproject-2.5.5-
      <UseOfMfc>false</UseOfMfc>
      <CharacterSet>MultiByte</CharacterSet>
    </PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip-apps/build/sample_debug.vcxproj pjproject-2.5.5-mod/pjsip-apps/build/sample_debug.vcxproj
---- pjproject-2.5.5/pjsip-apps/build/sample_debug.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip-apps/build/sample_debug.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip-apps/build/sample_debug.vcxproj pjproject2/pjsip-apps/build/sample_debug.vcxproj
+--- pjproject/pjsip-apps/build/sample_debug.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/pjsip-apps/build/sample_debug.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -3300,9 +3312,9 @@ diff -ruN pjproject-2.5.5/pjsip-apps/build/sample_debug.vcxproj pjproject-2.5.5-
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/pjsip-apps/build/samples.vcxproj pjproject-2.5.5-mod/pjsip-apps/build/samples.vcxproj
---- pjproject-2.5.5/pjsip-apps/build/samples.vcxproj	2015-08-25 16:41:17.000000000 +0800
-+++ pjproject-2.5.5-mod/pjsip-apps/build/samples.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/pjsip-apps/build/samples.vcxproj pjproject2/pjsip-apps/build/samples.vcxproj
+--- pjproject/pjsip-apps/build/samples.vcxproj	2015-08-25 16:41:17.000000000 +0800
++++ pjproject2/pjsip-apps/build/samples.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -58,62 +58,62 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -3378,9 +3390,9 @@ diff -ruN pjproject-2.5.5/pjsip-apps/build/samples.vcxproj pjproject-2.5.5-mod/p
      <UseOfMfc>false</UseOfMfc>
    </PropertyGroup>
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-diff -ruN pjproject-2.5.5/third_party/build/baseclasses/libbaseclasses.vcxproj pjproject-2.5.5-mod/third_party/build/baseclasses/libbaseclasses.vcxproj
---- pjproject-2.5.5/third_party/build/baseclasses/libbaseclasses.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/baseclasses/libbaseclasses.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/baseclasses/libbaseclasses.vcxproj pjproject2/third_party/build/baseclasses/libbaseclasses.vcxproj
+--- pjproject/third_party/build/baseclasses/libbaseclasses.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/baseclasses/libbaseclasses.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -3527,9 +3539,9 @@ diff -ruN pjproject-2.5.5/third_party/build/baseclasses/libbaseclasses.vcxproj p
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/g7221/libg7221codec.vcxproj pjproject-2.5.5-mod/third_party/build/g7221/libg7221codec.vcxproj
---- pjproject-2.5.5/third_party/build/g7221/libg7221codec.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/g7221/libg7221codec.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/g7221/libg7221codec.vcxproj pjproject2/third_party/build/g7221/libg7221codec.vcxproj
+--- pjproject/third_party/build/g7221/libg7221codec.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/g7221/libg7221codec.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
@@ -3676,9 +3688,9 @@ diff -ruN pjproject-2.5.5/third_party/build/g7221/libg7221codec.vcxproj pjprojec
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/gsm/libgsmcodec.vcxproj pjproject-2.5.5-mod/third_party/build/gsm/libgsmcodec.vcxproj
---- pjproject-2.5.5/third_party/build/gsm/libgsmcodec.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/gsm/libgsmcodec.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/gsm/libgsmcodec.vcxproj pjproject2/third_party/build/gsm/libgsmcodec.vcxproj
+--- pjproject/third_party/build/gsm/libgsmcodec.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/gsm/libgsmcodec.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -3825,9 +3837,9 @@ diff -ruN pjproject-2.5.5/third_party/build/gsm/libgsmcodec.vcxproj pjproject-2.
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/ilbc/libilbccodec.vcxproj pjproject-2.5.5-mod/third_party/build/ilbc/libilbccodec.vcxproj
---- pjproject-2.5.5/third_party/build/ilbc/libilbccodec.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/ilbc/libilbccodec.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/ilbc/libilbccodec.vcxproj pjproject2/third_party/build/ilbc/libilbccodec.vcxproj
+--- pjproject/third_party/build/ilbc/libilbccodec.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/ilbc/libilbccodec.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -3974,9 +3986,9 @@ diff -ruN pjproject-2.5.5/third_party/build/ilbc/libilbccodec.vcxproj pjproject-
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/milenage/libmilenage.vcxproj pjproject-2.5.5-mod/third_party/build/milenage/libmilenage.vcxproj
---- pjproject-2.5.5/third_party/build/milenage/libmilenage.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/milenage/libmilenage.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/milenage/libmilenage.vcxproj pjproject2/third_party/build/milenage/libmilenage.vcxproj
+--- pjproject/third_party/build/milenage/libmilenage.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/milenage/libmilenage.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -4123,9 +4135,9 @@ diff -ruN pjproject-2.5.5/third_party/build/milenage/libmilenage.vcxproj pjproje
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/resample/libresample.vcxproj pjproject-2.5.5-mod/third_party/build/resample/libresample.vcxproj
---- pjproject-2.5.5/third_party/build/resample/libresample.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/resample/libresample.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/resample/libresample.vcxproj pjproject2/third_party/build/resample/libresample.vcxproj
+--- pjproject/third_party/build/resample/libresample.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/resample/libresample.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -4272,9 +4284,9 @@ diff -ruN pjproject-2.5.5/third_party/build/resample/libresample.vcxproj pjproje
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/speex/libspeex.vcxproj pjproject-2.5.5-mod/third_party/build/speex/libspeex.vcxproj
---- pjproject-2.5.5/third_party/build/speex/libspeex.vcxproj	2015-08-21 22:58:04.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/speex/libspeex.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/speex/libspeex.vcxproj pjproject2/third_party/build/speex/libspeex.vcxproj
+--- pjproject/third_party/build/speex/libspeex.vcxproj	2015-08-21 22:58:04.000000000 +0800
++++ pjproject2/third_party/build/speex/libspeex.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -4421,9 +4433,9 @@ diff -ruN pjproject-2.5.5/third_party/build/speex/libspeex.vcxproj pjproject-2.5
    </ImportGroup>
    <PropertyGroup Label="UserMacros" />
    <PropertyGroup>
-diff -ruN pjproject-2.5.5/third_party/build/srtp/libsrtp.vcxproj pjproject-2.5.5-mod/third_party/build/srtp/libsrtp.vcxproj
---- pjproject-2.5.5/third_party/build/srtp/libsrtp.vcxproj	2016-03-18 15:09:21.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/srtp/libsrtp.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/srtp/libsrtp.vcxproj pjproject2/third_party/build/srtp/libsrtp.vcxproj
+--- pjproject/third_party/build/srtp/libsrtp.vcxproj	2016-03-18 15:09:21.000000000 +0800
++++ pjproject2/third_party/build/srtp/libsrtp.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -58,62 +58,62 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
@@ -4577,9 +4589,9 @@ diff -ruN pjproject-2.5.5/third_party/build/srtp/libsrtp.vcxproj pjproject-2.5.5
      <ClInclude Include="..\..\srtp\crypto\include\aes.h" />
      <ClInclude Include="..\..\srtp\crypto\include\aes_cbc.h" />
      <ClInclude Include="..\..\srtp\crypto\include\aes_icm.h" />
-diff -ruN pjproject-2.5.5/third_party/build/yuv/libyuv.vcxproj pjproject-2.5.5-mod/third_party/build/yuv/libyuv.vcxproj
---- pjproject-2.5.5/third_party/build/yuv/libyuv.vcxproj	2016-06-28 14:04:19.000000000 +0800
-+++ pjproject-2.5.5-mod/third_party/build/yuv/libyuv.vcxproj	2018-11-05 14:11:17.000000000 +0800
+diff -ruN pjproject/third_party/build/yuv/libyuv.vcxproj pjproject2/third_party/build/yuv/libyuv.vcxproj
+--- pjproject/third_party/build/yuv/libyuv.vcxproj	2016-06-28 14:04:19.000000000 +0800
++++ pjproject2/third_party/build/yuv/libyuv.vcxproj	2018-12-28 16:23:09.000000000 +0800
 @@ -57,73 +57,73 @@
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
