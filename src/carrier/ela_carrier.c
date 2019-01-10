@@ -80,6 +80,7 @@
 #include "elacp.h"
 #include "dht.h"
 #include "tassemblies.h"
+#include "offline_msg.h"
 
 #define TURN_SERVER_PORT                ((uint16_t)3478)
 #define TURN_SERVER_USER_SUFFIX         "auth.tox"
@@ -1044,6 +1045,9 @@ static void ela_destroy(void *argv)
     if (w->friend_events)
         deref(w->friend_events);
 
+    if (w->offline_msgs)
+        deref(w->offline_msgs);
+
     pthread_mutex_destroy(&w->ext_mutex);
 
     dht_kill(&w->dht);
@@ -1156,6 +1160,14 @@ ElaCarrier *ela_new(const ElaOptions *opts, ElaCallbacks *callbacks,
 
     w->friend_events = list_create(1, NULL);
     if (!w->friend_events) {
+        free_persistence_data(&data);
+        deref(w);
+        ela_set_error(ELA_GENERAL_ERROR(ELAERR_OUT_OF_MEMORY));
+        return NULL;
+    }
+
+    w->offline_msgs = list_create(1, NULL);
+    if (!w->offline_msgs) {
         free_persistence_data(&data);
         deref(w);
         ela_set_error(ELA_GENERAL_ERROR(ELAERR_OUT_OF_MEMORY));
@@ -1283,6 +1295,53 @@ static void notify_friends(ElaCarrier *w)
         w->callbacks.friend_list(w, NULL, w->context);
 }
 
+static void offline_msg_destroy(void *obj)
+{
+    OfflineMsg *msg = (OfflineMsg *)obj;
+
+    if (msg->content)
+        free(msg->content);
+}
+
+static OfflineMsg *offline_msg_alloc(const char *from, const uint8_t *msg,
+                                     size_t len)
+{
+    OfflineMsg *message = rc_zalloc(sizeof(OfflineMsg), offline_msg_destroy);
+    if (!message)
+        return NULL;
+
+    message->content = rc_alloc(len, NULL);
+    if (!message->content) {
+        deref(message);
+        return NULL;
+    }
+
+    message->le.data = message;
+    strcpy(message->from, from);
+    memcpy(message->content, msg, len);
+    message->len = len;
+
+    return message;
+}
+
+static void notify_offline_msg(ElaCarrier *w, const char *from,
+                               const uint8_t *msg, size_t len)
+{
+    OfflineMsg *off_msg;
+
+    assert(w);
+    assert(from && *from);
+    assert(msg);
+    assert(len);
+
+    off_msg = offline_msg_alloc(from, msg, len);
+    if (!off_msg)
+        return;
+
+    list_push_tail(w->offline_msgs, &off_msg->le);
+    deref(off_msg);
+}
+
 static void notify_connection_cb(bool connected, void *context)
 {
     ElaCarrier *w = (ElaCarrier *)context;
@@ -1291,6 +1350,7 @@ static void notify_connection_cb(bool connected, void *context)
         w->is_ready = true;
         if (w->callbacks.ready)
             w->callbacks.ready(w, w->context);
+        offline_msg_recv(w, &notify_offline_msg);
     }
 
     w->connection_status = (connected ? ElaConnectionStatus_Connected :
@@ -1583,6 +1643,61 @@ redo_events:
         list_iterator_remove(&it);
 
         deref(event);
+    }
+}
+
+static void do_offline_message(ElaCarrier *w, const OfflineMsg *msg)
+{
+    ElaCP *cp;
+
+    assert(w);
+    assert(msg);
+
+    cp = elacp_decode(msg->content, msg->len);
+    if (!cp) {
+        vlogE("Carrier: Invalid DHT message, dropped.");
+        return;
+    }
+
+    switch(elacp_get_type(cp)) {
+        case ELACP_TYPE_MESSAGE:
+            if (!elacp_get_extension(cp) &&
+                w->callbacks.friend_message &&
+                ela_is_friend(w, msg->from)) {
+                w->callbacks.friend_message(w, msg->from,
+                                            elacp_get_raw_data(cp),
+                                            elacp_get_raw_data_length(cp),
+                                            w->context);
+            }
+            break;
+        default:
+            vlogE("Carrier: Unknown DHT message, dropped.");
+            break;
+    }
+}
+
+static void do_offline_messages(ElaCarrier *w)
+{
+    list_t *msgs = w->offline_msgs;
+    list_iterator_t it;
+
+redo_msgs:
+    list_iterate(msgs, &it);
+    while (list_iterator_has_next(&it)) {
+        OfflineMsg *msg;
+        int rc;
+
+        rc = list_iterator_next(&it, (void **)&msg);
+        if (rc == 0)
+            break;
+
+        if (rc == -1)
+            goto redo_msgs;
+
+        do_offline_message(w, msg);
+        list_iterator_remove(&it);
+
+        deref(msg);
     }
 }
 
@@ -2252,6 +2367,7 @@ int ela_run(ElaCarrier *w, int interval)
         do_tassemblies_expire(w->tassembly_ireqs);
         do_tassemblies_expire(w->tassembly_irsps);
         do_transacted_callabcks_check(w);
+        do_offline_messages(w);
 
         if (idle_interval > 0)
             notify_idle(w);
@@ -2898,13 +3014,19 @@ int ela_send_friend_message(ElaCarrier *w, const char *to, const void *msg,
     }
 
     rc = dht_friend_message(&w->dht, friend_number, data, data_len);
-    free(data);
+    if (rc != ELA_DHT_ERROR(ELAERR_FRIEND_OFFLINE)) {
+        free(data);
 
-    if (rc < 0) {
-        ela_set_error(rc);
-        return -1;
+        if (rc < 0) {
+            ela_set_error(rc);
+            return -1;
+        }
+
+        return 0;
     }
 
+    offline_msg_send(w, to, data, data_len); //TODO
+    free(data);
     return 0;
 }
 

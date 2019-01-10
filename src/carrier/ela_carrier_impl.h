@@ -68,6 +68,13 @@ typedef struct FriendEvent {
     ElaFriendInfo fi;
 } FriendEvent;
 
+typedef struct OfflineMsg {
+    list_entry_t le;
+    char from[ELA_MAX_ID_LEN + 1];
+    uint8_t *content;
+    size_t len;
+} OfflineMsg;
+
 struct ElaCarrier {
     pthread_mutex_t ext_mutex;
     void *session;          //reserved for session extension.
@@ -94,6 +101,8 @@ struct ElaCarrier {
 
     list_t *friend_events; // for friend_added/removed.
     hashtable_t *friends;
+
+    list_t *offline_msgs;
 
     hashtable_t *tcallbacks;
     hashtable_t *thistory;
